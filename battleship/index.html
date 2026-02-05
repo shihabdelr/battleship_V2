@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Battleship (User vs AI)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div>
+        <h1>Battleship</h1>
+        <p class="subtitle" id="subtitleText">You start first. Click on the AI board to fire.</p>
+      </div>
+      <div class="controls">
+        <button id="resetBtn" type="button">New Game</button>
+        <button id="clearSaveBtn" type="button">Clear Saved Game</button>
+      </div>
+    </header>
+
+    <section class="status">
+      <p id="statusText">You start first. Fire on the AI board.</p>
+      <p id="turnText">Current turn: <strong>User</strong></p>
+      <p id="statsText">User Hits: 0 | User Misses: 0 — AI Hits: 0 | AI Misses: 0</p>
+    </section>
+
+    <section class="boards">
+      <div class="panel">
+        <h2>Your Board</h2>
+        <div id="userBoard" class="board" aria-label="User board"></div>
+        <p class="hint">AI fires here.</p>
+      </div>
+
+      <div class="panel">
+        <h2>AI Board</h2>
+        <div id="aiBoard" class="board" aria-label="AI board"></div>
+        <p class="hint">You fire here.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

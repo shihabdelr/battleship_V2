@@ -1,0 +1,129 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: #0b1220;
+  color: #e8eefc;
+}
+
+.app {
+  max-width: 980px;
+  margin: 28px auto;
+  padding: 16px;
+}
+
+.top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.subtitle {
+  margin: 6px 0 0;
+  opacity: 0.9;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.controls button {
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #2b67f6;
+  color: white;
+  font-weight: 700;
+}
+.controls button:hover { filter: brightness(1.05); }
+#clearSaveBtn { background: #7a2bf6; }
+
+.status {
+  margin: 14px 0 18px;
+  padding: 12px 14px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+}
+
+.status p { margin: 6px 0; }
+
+.boards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.panel {
+  padding: 12px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+}
+
+.panel h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.hint {
+  margin: 10px 0 0;
+  opacity: 0.8;
+  font-size: 13px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(10, 38px);
+  grid-template-rows: repeat(10, 38px);
+  gap: 6px;
+  user-select: none;
+}
+
+.cell {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.10);
+  cursor: pointer;
+  transition: transform 0.05s ease, filter 0.15s ease;
+}
+
+.cell:hover { filter: brightness(1.08); }
+.cell:active { transform: scale(0.98); }
+
+.cell.hit {
+  background: #ff3b3b;
+  border-color: rgba(255,255,255,0.18);
+}
+
+.cell.miss {
+  background: #2ecc71;
+  border-color: rgba(255,255,255,0.18);
+}
+
+.cell.disabled {
+  cursor: not-allowed;
+  opacity: 0.96;
+}
+
+@media (max-width: 860px) {
+  .boards { grid-template-columns: 1fr; }
+  .board {
+    grid-template-columns: repeat(10, 30px);
+    grid-template-rows: repeat(10, 30px);
+    gap: 5px;
+  }
+  .cell { width: 30px; height: 30px; border-radius: 8px; }
+}
